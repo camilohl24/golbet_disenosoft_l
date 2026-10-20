@@ -52,11 +52,16 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 });
 // Open generic registration: one line, a repository for every entity 
-builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<IBetRepository, BetRepository>();
+
 builder.Services.AddScoped<IMatchService, MatchService>();
+builder.Services.AddScoped<IBetService, BetService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+
 
 // Specific repositories 
 

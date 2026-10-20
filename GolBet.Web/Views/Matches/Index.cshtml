@@ -11,7 +11,7 @@
     var currentSearch = ViewBag.CurrentSearch as string;
 
 }
-<form method="get" asp-action="Index" class="d-flex gap-2 mb-3">
+<form method="get" asp-action="Index" class="d-flex gap-2 mb-3 w-50">
     <input type="text" name="search" value="@currentSearch"
            class="form-control" placeholder="Buscar equipo..." />
 
@@ -72,7 +72,7 @@
             <p class="fs-5">No hay partidos para mostrar.</p>
         }
 
-        <a asp-action="Index" class="btn btn-success">Volver a la cartelera de partidos</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la cartelera de partidos</a>
     </div>
 }
  
